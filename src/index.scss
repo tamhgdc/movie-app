@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html {
+  @apply scroll-smooth;
+}
+body::-webkit-scrollbar {
+  width: 10px;
+}
+body::-webkit-scrollbar-track {
+  background-color: #fafafa;
+  border-radius: 50px;
+}
+body::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(-45deg, #d66efd, #d66efd);
+  border-radius: 50px;
+}
+@layer base {
+  body {
+    @apply bg-slate-900 font-body text-white;
+  }
+}
+
+@layer components {
+  .fix {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  .page-container {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .page-full {
+    max-width: 100%;
+    height: 600px;
+  }
+  .page-container-fluid {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .movie-list .swiper-slide {
+    width: 300px;
+    height: auto;
+  }
+  .movie-list .swiper-button-prev {
+    font-weight: bold;
+  }
+  .movie-list .swiper-button-next {
+    font-weight: bold;
+  }
+  .banner .swiper {
+    height: 100%;
+
+    transition-duration: 0.3s;
+  }
+}
+// .skeleton {
+//   background-color: rgba(0,10,0,0);
+//     background-color: #eee;
+//     background-image: linear-gradient(
+//       110deg,
+//       #ececec 8%,
+//       #e2cdcd 18%,
+//       #ececec 33%
+//     );
+//     background-size: 200% 100%;
+//     animation: 1.5s shine linear infinite;
+//   }
+//   @keyframes shine {
+//     to {
+//       background-position-x: -200%;
+//     }
+//   }
+.header {
+}
+.hide {
+  background-color: translate;
+}
+.show {
+  background-color: rgba(51, 10, 103, 0.93);
+}
+
+.responsive-video {
+  position: relative;
+  height: 0;
+  padding-bottom: calc((9 / 16) * 100%);
+}
+.responsive-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  @media (max-width: 767px) {
+    height: 100%;
+  }
+  object-fit: fill;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  .selected {
+    @apply text-pink-700;
+  }
+  .next,
+  .previous {
+    padding: 8px;
+    background-color: white;
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+    border-radius: 6px;
+  }
+}
+.menu-toggle {
+  // transform: translateX(-700px);
+  animation: modalFadeIn ease 0.5s;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-700px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes modalFadeOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-700px);
+  }
+}
